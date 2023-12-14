@@ -1,0 +1,80 @@
+@import "./variables";
+@import "./mixin";
+
+.wrapper {
+  min-height: calc(100vh - 60px);
+  background-color: rgb(237, 217, 192);
+  border-top-right-radius: 15px;
+  border-top-left-radius: 15px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  background-color: rgb(237, 217, 192);
+  gap: 30px;
+  @include tablet {
+    width: 100%;
+  }
+  @include mobile {
+    width: 100%;
+    padding-top: 30px;
+  }
+
+  &_item {
+    background-color: $color-base;
+    color: $color-primary;
+    padding: 10px 10px;
+    width: 60%;
+    display: flex;
+    border-radius: 15px;
+
+    @include tablet {
+      flex-direction: row;
+    }
+    @include mobile {
+      flex-direction: column;
+    }
+    img {
+      width: 350px;
+      border-radius: 13px;
+
+      @include tablet {
+        width: 300px;
+        // width: 100%;
+      }
+
+      @include mobile {
+        width: 100%;
+      }
+    }
+
+    &_details {
+      padding: 10px 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+
+      a {
+        text-decoration: none;
+        color: inherit;
+      }
+      &_time {
+        font-weight: 500;
+        color: black;
+      }
+      span {
+        color: rgb(182, 154, 154);
+        font-size: 18px;
+        font-weight: 600;
+        margin-left: 15px;
+      }
+    }
+
+    &:hover {
+      box-shadow: 0 1px 2px $color-primary;
+    }
+  }
+}
